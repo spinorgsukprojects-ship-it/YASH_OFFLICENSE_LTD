@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #0b1f33;
+  background: #ffffff;
+  scroll-behavior: smooth;
+  --font-inter: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-manrope: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  outline-color: #155eef;
+}
+
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(21, 94, 239, 0.18);
+  border-radius: 999px;
+  background: #eef5ff;
+  padding: 8px 14px;
+  color: #155eef;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-weight: 800;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: #155eef;
+  color: white;
+  box-shadow: 0 12px 28px rgba(21, 94, 239, 0.24);
+}
+
+.btn-primary:hover {
+  background: #0f49c6;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(11, 31, 51, 0.16);
+  background: white;
+  color: #0b1f33;
+}
+
+.card {
+  border: 1px solid rgba(11, 31, 51, 0.09);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 18px 48px rgba(11, 31, 51, 0.08);
+}
+
+
+.prose-policy h2 {
+  margin-top: 2rem;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.prose-policy p,
+.prose-policy li {
+  color: #475569;
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+}
