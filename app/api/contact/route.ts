@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { company } from "@/data/company";
+import { getDb } from "@/lib/firebaseAdmin";
 
 const requiredFields = ["fullName", "email", "phone", "serviceRequired", "applicationType", "preferredContact", "subject", "message", "consent"];
 const limits: Record<string, number> = {
@@ -95,11 +96,23 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: "Unable to send enquiry at this time." }, { status: 502 });
   }
 
-  await resend.emails.send({
+  const autoReply = await resend.emails.send({
     from,
     to: data.email,
     subject: "We received your enquiry - Yashofflicense LTD",
     html: `<p>Dear ${escapeHtml(data.fullName)},</p><p>Thank you for contacting Yashofflicense LTD. We have received your enquiry and will respond using your preferred contact method where possible.</p><p><strong>Reference:</strong> ${reference}</p><p>${escapeHtml(company.tradingName)}</p>`
+  });
+
+  await saveContactEnquiry({
+    data,
+    ip,
+    reference,
+    submittedAtIso: new Date(now).toISOString(),
+    emailDelivery: {
+      internalId: internal.data?.id || null,
+      autoReplyId: autoReply.data?.id || null,
+      autoReplyError: autoReply.error?.message || null
+    }
   });
 
   return NextResponse.json({ message: "Thank you. Your enquiry has been sent.", reference });
@@ -123,4 +136,34 @@ function table(rows: Record<string, string>) {
 
 function escapeHtml(value: string) {
   return value.replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char] || char);
+}
+
+async function saveContactEnquiry({
+  data,
+  ip,
+  reference,
+  submittedAtIso,
+  emailDelivery
+}: {
+  data: Record<string, string>;
+  ip: string;
+  reference: string;
+  submittedAtIso: string;
+  emailDelivery: {
+    internalId: string | null;
+    autoReplyId: string | null;
+    autoReplyError: string | null;
+  };
+}) {
+  try {
+    await getDb().collection("contactEnquiries").doc(reference).set({
+      ...data,
+      reference,
+      submittedAt: submittedAtIso,
+      sourceIp: ip,
+      emailDelivery
+    });
+  } catch (error) {
+    console.error("Unable to save contact enquiry to Firestore", error);
+  }
 }
