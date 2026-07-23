@@ -43,7 +43,6 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
-          <a className="btn btn-secondary" href={company.directionsUrl}>Directions</a>
           <Link className="btn btn-primary" href="/contact">Visit / Call</Link>
         </div>
         <button

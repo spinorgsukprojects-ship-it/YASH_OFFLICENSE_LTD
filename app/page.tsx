@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BadgePercent, Beer, Clock, MapPin, Phone, ShoppingBasket, Sparkles, type LucideIcon } from "lucide-react";
+import { ArrowRight, BadgePercent, Beer, Clock, Phone, ShoppingBasket, Sparkles, type LucideIcon } from "lucide-react";
 import { MotionDiv } from "@/components/Motion";
 import { company, legalDisclaimer } from "@/data/company";
 import { services } from "@/data/services";
@@ -39,7 +39,6 @@ export default function Home() {
             <p className="mt-5 text-2xl font-black text-gold md:text-3xl">Beautifully stocked. Open late. Close to home.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="btn btn-primary" href="/services">Explore Store <ArrowRight size={18} /></Link>
-              <a className="btn bg-white text-emerald-950 hover:bg-cream" href={company.directionsUrl}>Get Directions</a>
               <a className="btn bg-white/10 text-white ring-1 ring-white/25 hover:bg-white/15" href={company.telHref}><Phone size={18} /> Call</a>
             </div>
             <div className="mt-10 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
@@ -121,7 +120,7 @@ export default function Home() {
             <p className="mt-5 text-sm font-bold leading-6 text-slateText">{legalDisclaimer}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a className="btn btn-primary" href={company.telHref}><Phone size={18} /> Call Us</a>
-              <a className="btn btn-secondary" href={company.directionsUrl}><MapPin size={18} /> Directions</a>
+              <Link className="btn btn-secondary" href="/contact">Contact Store</Link>
             </div>
           </div>
         </div>
