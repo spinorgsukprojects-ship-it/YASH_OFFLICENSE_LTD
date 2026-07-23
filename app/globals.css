@@ -118,6 +118,18 @@ textarea {
 
 @media (max-width: 768px) {
   .section {
-    padding: 64px 0;
+    padding: 56px 0;
+  }
+
+  .eyebrow {
+    max-width: 100%;
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .btn {
+    min-height: 46px;
+    padding: 11px 15px;
+    text-align: center;
   }
 }

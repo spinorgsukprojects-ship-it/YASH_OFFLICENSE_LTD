@@ -15,8 +15,8 @@ export default function PrivacyPolicyPage() {
       <p>We may collect your name, email address, phone number, enquiry type, preferred contact method, subject, message, submission date, page URL and enquiry reference.</p>
       <h2>Why We Collect It</h2>
       <p>This information is used to respond to your enquiry, check product or store information where possible, and keep appropriate records of customer communications.</p>
-      <h2>Email Delivery Provider</h2>
-      <p>Website enquiries may be delivered using an email delivery provider such as Resend. That provider processes the email content for delivery to Yashofflicense LTD and, where applicable, confirmation to the customer.</p>
+      <h2>Email Enquiries</h2>
+      <p>The contact form opens your email app with a prepared message. The enquiry is sent only if you choose to send that email from your own email app.</p>
       <h2>Retention</h2>
       <p>Enquiry records are retained only for as long as reasonably needed for customer communication, administration and legitimate business record keeping.</p>
       <h2>Your Contact Rights</h2>

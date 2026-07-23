@@ -9,13 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "firebase-admin": "^13.10.0",
     "framer-motion": "^12.23.9",
     "lucide-react": "^0.468.0",
     "next": "^15.4.2",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "resend": "^4.0.1"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.12",

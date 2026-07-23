@@ -6,10 +6,10 @@ import { company, legalDisclaimer } from "@/data/company";
 import { services } from "@/data/services";
 
 const quickLinks = [
-  "Chilled drinks",
-  "Wines & spirits",
-  "Fresh essentials",
-  "Snacks & sweets"
+  "Chilled",
+  "Wines",
+  "Essentials",
+  "Treats"
 ];
 
 const gallery = [
@@ -30,26 +30,26 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-emerald-950 text-white">
-        <Image src="/images/storefront-evening.png" alt="Beautiful off licence storefront at dusk" fill priority className="object-cover opacity-80" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-950 via-emerald-950/74 to-emerald-950/18" />
-        <div className="container relative grid min-h-[720px] items-center py-20">
-          <MotionDiv initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-2xl">
+        <Image src="/images/storefront-evening.png" alt="Beautiful off licence storefront at dusk" fill priority className="object-cover object-center opacity-80 sm:object-cover" sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-950/78 to-emerald-950/25 md:bg-gradient-to-r md:from-emerald-950 md:via-emerald-950/74 md:to-emerald-950/18" />
+        <div className="container relative grid min-h-[620px] items-end py-12 sm:min-h-[680px] sm:items-center sm:py-20 lg:min-h-[720px]">
+          <MotionDiv initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-2xl pb-6 sm:pb-0">
             <p className="eyebrow border-white/20 bg-white/10 text-white"><Sparkles size={17} /> Local food, wine & convenience</p>
-            <h1 className="mt-6 font-heading text-5xl font-black md:text-7xl">Yash Off Licence</h1>
-            <p className="mt-5 text-2xl font-black text-gold md:text-3xl">Beautifully stocked. Open late. Close to home.</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link className="btn btn-primary" href="/services">Explore Store <ArrowRight size={18} /></Link>
-              <a className="btn bg-white/10 text-white ring-1 ring-white/25 hover:bg-white/15" href={company.telHref}><Phone size={18} /> Call</a>
+            <h1 className="mt-5 font-heading text-4xl font-black sm:text-5xl md:text-7xl">Yash Off Licence</h1>
+            <p className="mt-4 max-w-[19rem] text-xl font-black leading-tight text-gold sm:max-w-xl sm:text-2xl md:text-3xl">Beautifully stocked. Open late. Close to home.</p>
+            <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap">
+              <Link className="btn btn-primary w-full sm:w-auto" href="/services">Explore Store <ArrowRight size={18} /></Link>
+              <a className="btn w-full bg-white/10 text-white ring-1 ring-white/25 hover:bg-white/15 sm:w-auto" href={company.telHref}><Phone size={18} /> Call</a>
             </div>
-            <div className="mt-10 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {quickLinks.map((item) => <span key={item} className="rounded-md bg-white/12 px-3 py-3 text-center text-sm font-black backdrop-blur">{item}</span>)}
+            <div className="mt-8 grid max-w-[19rem] grid-cols-2 gap-2 sm:mt-10 sm:max-w-xl sm:grid-cols-4 sm:gap-3">
+              {quickLinks.map((item) => <span key={item} className="rounded-md bg-white/12 px-3 py-3 text-center text-xs font-black backdrop-blur sm:text-sm">{item}</span>)}
             </div>
           </MotionDiv>
         </div>
       </section>
 
       <section className="bg-cream py-5">
-        <div className="container flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-black uppercase text-emerald-950 md:justify-between">
+        <div className="container flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-xs font-black uppercase text-emerald-950 sm:text-sm md:justify-between">
           <span>Wines</span>
           <span>Beers</span>
           <span>Spirits</span>
@@ -64,7 +64,7 @@ export default function Home() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">In store</p>
-            <h2 className="mt-5 font-heading text-4xl font-black md:text-6xl">A Better Looking Local Shop</h2>
+            <h2 className="mt-5 font-heading text-3xl font-black sm:text-4xl md:text-6xl">A Better Looking Local Shop</h2>
             <p className="mt-5 text-lg leading-8 text-slateText">Less searching, more finding. Clean shelves, chilled fridges and everyday favourites ready when you need them.</p>
           </div>
           <div className="mt-12 grid gap-4 md:grid-cols-4 md:grid-rows-[260px_260px]">
@@ -81,7 +81,7 @@ export default function Home() {
         <div className="container grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
           <div>
             <p className="eyebrow border-white/20 bg-white/10 text-white">Shop by mood</p>
-            <h2 className="mt-5 font-heading text-4xl font-black md:text-5xl">Whatever You Came For</h2>
+            <h2 className="mt-5 font-heading text-3xl font-black sm:text-4xl md:text-5xl">Whatever You Came For</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-4">
             {moments.map(({ title, text, icon: Icon }) => (
@@ -108,12 +108,12 @@ export default function Home() {
           <Image src="/images/storefront-evening.png" alt="Yash Off Licence style storefront at dusk" width={1600} height={916} className="aspect-[16/9] rounded-md object-cover shadow-soft" />
           <div>
             <p className="eyebrow"><Clock size={17} /> Opening hours</p>
-            <h2 className="mt-5 font-heading text-4xl font-black md:text-5xl">Open Late for Local Convenience</h2>
+            <h2 className="mt-5 font-heading text-3xl font-black sm:text-4xl md:text-5xl">Open Late for Local Convenience</h2>
             <div className="mt-7 rounded-md bg-cream p-5">
               {company.hours.map(([day, hours]) => (
-                <div key={day} className="flex items-center justify-between gap-4 border-b border-emerald-950/10 py-3 first:pt-0 last:border-0 last:pb-0">
+                <div key={day} className="grid gap-1 border-b border-emerald-950/10 py-3 first:pt-0 last:border-0 last:pb-0 sm:flex sm:items-center sm:justify-between sm:gap-4">
                   <span className="font-extrabold">{day}</span>
-                  <span className="text-right font-heading text-lg font-black text-burgundy">{hours}</span>
+                  <span className="font-heading text-lg font-black text-burgundy sm:text-right">{hours}</span>
                 </div>
               ))}
             </div>

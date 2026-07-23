@@ -22,14 +22,14 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-emerald-950/10 bg-white/92 backdrop-blur">
       <div className="bg-burgundy py-2 text-sm font-bold text-white">
         <div className="container flex flex-wrap items-center justify-center gap-x-6 gap-y-2 md:justify-between">
-          <span className="inline-flex items-center gap-2"><Clock size={16} /> Open late for drinks, treats and essentials</span>
-          <a className="inline-flex items-center gap-2 hover:text-gold" href={company.telHref}><Phone size={16} /> {company.phone}</a>
+          <span className="inline-flex items-center gap-2 text-center"><Clock size={16} className="shrink-0" /> <span className="hidden sm:inline">Open late for drinks, treats and essentials</span><span className="sm:hidden">Open late daily</span></span>
+          <a className="inline-flex items-center gap-2 hover:text-gold" href={company.telHref}><Phone size={16} className="shrink-0" /> <span className="hidden sm:inline">{company.phone}</span><span className="sm:hidden">Call store</span></a>
         </div>
       </div>
-      <div className="container flex min-h-20 items-center justify-between gap-4">
+      <div className="container flex min-h-20 items-center justify-between gap-3">
         <Link href="/" className="leading-tight" onClick={() => setOpen(false)}>
-          <span className="block font-heading text-2xl font-black tracking-normal text-emerald-950">Yash Off Licence</span>
-          <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-burgundy">Food • Wine • Essentials</span>
+          <span className="block font-heading text-xl font-black tracking-normal text-emerald-950 sm:text-2xl">Yash Off Licence</span>
+          <span className="text-[0.66rem] font-extrabold uppercase tracking-[0.12em] text-burgundy sm:text-xs sm:tracking-[0.18em]">Food • Wine • Essentials</span>
         </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
           {nav.map(([label, href]) => (

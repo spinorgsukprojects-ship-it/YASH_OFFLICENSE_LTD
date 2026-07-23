@@ -2,6 +2,7 @@
 
 import { Send } from "lucide-react";
 import { FormEvent, useState } from "react";
+import { company } from "@/data/company";
 
 const services = [
   "Check product availability",
@@ -15,32 +16,41 @@ const services = [
 ];
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("loading");
     setMessage("");
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
+    const data = Object.fromEntries(formData.entries()) as Record<string, string>;
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, pageUrl: window.location.href })
-      });
-      const result = (await response.json()) as { message?: string };
-      if (!response.ok) throw new Error(result.message || "Unable to submit enquiry.");
-      setStatus("success");
-      setMessage(result.message || "Thank you. Your enquiry has been sent.");
-      form.reset();
-    } catch (error) {
+    if (String(data.website || "").trim()) return;
+    if (!form.reportValidity()) {
       setStatus("error");
-      setMessage(error instanceof Error ? error.message : "Unable to submit enquiry.");
+      setMessage("Please complete all required fields.");
+      return;
     }
+
+    const subject = encodeURIComponent(data.subject || "Website enquiry");
+    const body = encodeURIComponent([
+      `Name: ${data.fullName || ""}`,
+      `Email: ${data.email || ""}`,
+      `Phone: ${data.phone || ""}`,
+      `Enquiry Type: ${data.serviceRequired || ""}`,
+      `Preferred Contact: ${data.preferredContact || ""}`,
+      "",
+      "Message:",
+      data.message || "",
+      "",
+      `Page: ${window.location.href}`
+    ].join("\n"));
+
+    window.location.href = `${company.mailHref}?subject=${subject}&body=${body}`;
+    setStatus("success");
+    setMessage("Your email app should open with the enquiry ready to send.");
+    form.reset();
   }
 
   return (
@@ -81,8 +91,8 @@ export function ContactForm() {
         <span>I agree that Yashofflicense LTD may use the information provided to respond to my enquiry.</span>
       </label>
       <p className="text-sm leading-6 text-slateText">Please do not include payment details. Age-restricted products are sold in store only and ID may be required.</p>
-      <button className="btn btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={status === "loading"}>
-        <Send size={18} /> {status === "loading" ? "Sending..." : "Send Enquiry"}
+      <button className="btn btn-primary w-full" type="submit">
+        <Send size={18} /> Open Email
       </button>
       {message ? (
         <p className={`rounded-md p-4 text-sm font-bold ${status === "success" ? "bg-green/10 text-green" : "bg-red-50 text-red-700"}`} role="status">
