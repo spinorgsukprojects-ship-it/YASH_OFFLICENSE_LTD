@@ -22,19 +22,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <section className="section bg-mist">
+      <section className="section bg-cream">
         <div className="container max-w-4xl">
-          <Link href="/blog" className="inline-flex items-center gap-2 font-bold text-royal"><ArrowLeft size={18} /> Back to Blog</Link>
-          <p className="eyebrow mt-8">General Information</p>
-          <h1 className="mt-5 font-heading text-4xl font-extrabold md:text-5xl">{post.title}</h1>
+          <Link href="/blog" className="inline-flex items-center gap-2 font-bold text-burgundy"><ArrowLeft size={18} /> Back to Customer Notes</Link>
+          <p className="eyebrow mt-8">Store Guide</p>
+          <h1 className="mt-5 font-heading text-4xl font-black md:text-5xl">{post.title}</h1>
           <p className="mt-4 text-lg leading-8 text-slateText">{post.description}</p>
         </div>
       </section>
       <article className="section">
         <div className="container max-w-3xl space-y-6 text-lg leading-8 text-slateText">
           {post.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          <p className="rounded-md bg-mist p-5 font-bold text-navy">
-            This content is provided for general information and does not constitute legal advice. Requirements may vary depending on the authority and application type.
+          <p className="rounded-md bg-mist p-5 font-bold text-emerald-950">
+            Product availability, opening hours and offers can change. Please call or visit the store to confirm current details.
           </p>
         </div>
       </article>

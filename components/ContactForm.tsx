@@ -4,14 +4,14 @@ import { Send } from "lucide-react";
 import { FormEvent, useState } from "react";
 
 const services = [
-  "New Licence Application Support",
-  "Licence Renewal Support",
-  "Document Preparation",
-  "Application Review",
-  "Compliance Administration",
-  "Business Registration Support",
-  "General Enquiry",
-  "Other"
+  "Check product availability",
+  "Wines, beers or spirits",
+  "Soft drinks or mixers",
+  "Snacks and confectionery",
+  "Groceries and essentials",
+  "Tobacco or vape products",
+  "Opening hours or directions",
+  "General enquiry"
 ];
 
 export function ContactForm() {
@@ -54,24 +54,16 @@ export function ContactForm() {
         <FormField label="Email Address" name="email" type="email" required maxLength={160} />
         <FormField label="Phone Number" name="phone" type="tel" required maxLength={40} />
       </div>
-      <div className="grid gap-5 md:grid-cols-2">
-        <FormField label="Business Name" name="businessName" maxLength={140} />
-        <FormField label="Company Number" name="companyNumber" maxLength={40} />
-      </div>
       <label className="grid gap-2 font-bold">
-        Service Required
-        <select className="min-h-12 rounded-md border border-slate-300 px-3 font-normal" name="serviceRequired" required defaultValue="">
-          <option value="" disabled>Select a service</option>
+        Enquiry Type
+        <select className="min-h-12 rounded-md border border-emerald-950/20 px-3 font-normal" name="serviceRequired" required defaultValue="">
+          <option value="" disabled>Select enquiry type</option>
           {services.map((service) => <option key={service}>{service}</option>)}
         </select>
       </label>
-      <div className="grid gap-5 md:grid-cols-2">
-        <FormField label="Application or Licence Type" name="applicationType" required maxLength={160} />
-        <FormField label="Renewal Date" name="renewalDate" type="date" />
-      </div>
       <label className="grid gap-2 font-bold">
         Preferred Contact Method
-        <select className="min-h-12 rounded-md border border-slate-300 px-3 font-normal" name="preferredContact" required defaultValue="">
+        <select className="min-h-12 rounded-md border border-emerald-950/20 px-3 font-normal" name="preferredContact" required defaultValue="">
           <option value="" disabled>Select preference</option>
           <option>Email</option>
           <option>Phone</option>
@@ -81,13 +73,14 @@ export function ContactForm() {
       <FormField label="Subject" name="subject" required maxLength={180} />
       <label className="grid gap-2 font-bold">
         Message
-        <textarea className="min-h-36 rounded-md border border-slate-300 p-3 font-normal" name="message" required maxLength={2000} />
+        <textarea className="min-h-36 rounded-md border border-emerald-950/20 p-3 font-normal" name="message" required maxLength={2000} placeholder="Tell us what you would like to check, reserve or ask about." />
       </label>
+      <input type="hidden" name="applicationType" value="Store enquiry" />
       <label className="flex gap-3 text-sm leading-6 text-slateText">
         <input className="mt-1 h-5 w-5 shrink-0" type="checkbox" name="consent" required />
         <span>I agree that Yashofflicense LTD may use the information provided to respond to my enquiry.</span>
       </label>
-      <p className="text-sm leading-6 text-slateText">Your information will only be used to respond to your enquiry. Please review our Privacy Policy for more information.</p>
+      <p className="text-sm leading-6 text-slateText">Please do not include payment details. Age-restricted products are sold in store only and ID may be required.</p>
       <button className="btn btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={status === "loading"}>
         <Send size={18} /> {status === "loading" ? "Sending..." : "Send Enquiry"}
       </button>
@@ -104,7 +97,7 @@ function FormField({ label, name, type = "text", required = false, maxLength }: 
   return (
     <label className="grid gap-2 font-bold">
       {label}{required ? <span className="sr-only"> required</span> : null}
-      <input className="min-h-12 rounded-md border border-slate-300 px-3 font-normal" name={name} type={type} required={required} maxLength={maxLength} />
+      <input className="min-h-12 rounded-md border border-emerald-950/20 px-3 font-normal" name={name} type={type} required={required} maxLength={maxLength} />
     </label>
   );
 }

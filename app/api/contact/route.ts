@@ -67,16 +67,13 @@ export async function POST(request: NextRequest) {
   const reference = `YOL-${new Date(now).toISOString().slice(0, 10).replaceAll("-", "")}-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
   const submittedAt = new Date(now).toLocaleString("en-GB", { timeZone: "Europe/London", dateStyle: "medium", timeStyle: "short" });
 
-  const internalHtml = table({
+const internalHtml = table({
     "Enquiry Reference": reference,
     Name: data.fullName,
     Email: data.email,
     Phone: data.phone,
-    "Business Name": data.businessName || "Not provided",
-    "Company Number": data.companyNumber || "Not provided",
-    "Service Required": data.serviceRequired,
-    "Application or Licence Type": data.applicationType,
-    "Renewal Date": data.renewalDate || "Not provided",
+    "Enquiry Type": data.serviceRequired,
+    "Store Area": data.applicationType,
     "Preferred Contact Method": data.preferredContact,
     Subject: data.subject,
     Message: data.message,
@@ -99,8 +96,8 @@ export async function POST(request: NextRequest) {
   const autoReply = await resend.emails.send({
     from,
     to: data.email,
-    subject: "We received your enquiry - Yashofflicense LTD",
-    html: `<p>Dear ${escapeHtml(data.fullName)},</p><p>Thank you for contacting Yashofflicense LTD. We have received your enquiry and will respond using your preferred contact method where possible.</p><p><strong>Reference:</strong> ${reference}</p><p>${escapeHtml(company.tradingName)}</p>`
+    subject: "We received your enquiry - Yash Off Licence",
+    html: `<p>Dear ${escapeHtml(data.fullName)},</p><p>Thank you for contacting Yash Off Licence. We have received your enquiry and will respond using your preferred contact method where possible.</p><p><strong>Reference:</strong> ${reference}</p><p>${escapeHtml(company.tradingName)}</p>`
   });
 
   await saveContactEnquiry({

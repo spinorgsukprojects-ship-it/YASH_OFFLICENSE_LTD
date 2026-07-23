@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function CompanyInformationPage() {
   return (
     <>
-      <section className="section bg-mist"><div className="container"><SectionHeading title="Company Information" text="Company information is provided for transparency. Service availability should be confirmed directly with Yashofflicense LTD." /></div></section>
+      <section className="section bg-cream"><div className="container"><SectionHeading title="Company Information" text="Company information is provided for transparency. Store product availability should be confirmed directly with Yash Off Licence." /></div></section>
       <section className="section"><div className="container max-w-4xl"><CompanyDetails /></div></section>
     </>
   );

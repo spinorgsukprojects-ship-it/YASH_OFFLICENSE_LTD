@@ -7,17 +7,19 @@ const config: Config = {
       colors: {
         navy: "#0B1F33",
         royal: "#155EEF",
-        green: "#16A36A",
-        gold: "#C9973B",
-        mist: "#F2F6FC",
-        slateText: "#475569"
+        green: "#0E7A4F",
+        gold: "#D6A437",
+        mist: "#F4F7F2",
+        cream: "#FFF8EA",
+        burgundy: "#8B1E2D",
+        slateText: "#536052"
       },
       fontFamily: {
         body: ["var(--font-inter)", "sans-serif"],
         heading: ["var(--font-manrope)", "sans-serif"]
       },
       boxShadow: {
-        soft: "0 18px 48px rgba(11,31,51,0.10)"
+        soft: "0 18px 48px rgba(20,45,32,0.12)"
       }
     }
   },

@@ -5,38 +5,38 @@ export type FAQ = {
 
 export const faqs: FAQ[] = [
   {
-    question: "What type of support does Yashofflicense LTD provide?",
+    question: "What does Yash Off Licence sell?",
     answer:
-      "We provide administrative guidance, document preparation support, application review support, renewal reminders, and general business administration assistance."
+      "We stock wines, beers, spirits, soft drinks, mixers, snacks, confectionery, groceries, chilled items, toiletries and everyday household essentials."
   },
   {
-    question: "Can you guarantee that my application will be approved?",
+    question: "Do you sell alcohol online?",
     answer:
-      "No. Approval decisions are made solely by the relevant authority. We provide administrative guidance and document support but cannot guarantee an outcome."
+      "No. Alcohol and other age-restricted products are available in store only and may only be purchased by customers aged 18 or over."
   },
   {
-    question: "What documents will I need?",
+    question: "Can I call to check stock?",
     answer:
-      "Document requirements vary by application type and authority. We can help you prepare a practical checklist based on the information you provide."
+      "Yes. You can call or send an enquiry to check whether a product is currently available before visiting."
   },
   {
-    question: "Can you help with renewals?",
+    question: "What are your opening hours?",
     answer:
-      "Yes. We can help organise renewal information, track dates, prepare updated documents, and provide reminder support."
+      "Opening hours are shown on the contact page and homepage. Hours may change during holidays, so call ahead if you are making a special trip."
   },
   {
-    question: "How long does the process take?",
+    question: "Do I need ID?",
     answer:
-      "Timescales depend on the application type, document readiness, and the relevant authority. We can help you understand the next administrative steps."
+      "Valid photo ID may be required for alcohol, tobacco, vape and any other age-restricted products. We reserve the right to refuse sale where ID cannot be verified."
   },
   {
-    question: "Do you submit applications on behalf of customers?",
+    question: "Do you offer everyday groceries?",
     answer:
-      "Support arrangements may vary by service and authority requirements. Please contact us to confirm what administrative assistance is available for your situation."
+      "Yes. We aim to provide convenient local top-ups such as milk, bread, snacks, chilled drinks, toiletries and household basics."
   },
   {
-    question: "How can I request support?",
+    question: "How can I contact the store?",
     answer:
-      "You can call, email, or send an enquiry through the contact form. We will respond using your preferred contact method where possible."
+      "You can call, email, get directions from the contact page, or send a quick enquiry through the website."
   }
 ];

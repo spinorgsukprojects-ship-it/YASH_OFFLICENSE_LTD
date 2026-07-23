@@ -1,12 +1,12 @@
 import {
-  BriefcaseBusiness,
-  CalendarClock,
-  ClipboardCheck,
-  FileCheck2,
-  FileSearch,
-  FolderCog,
-  Landmark,
-  LifeBuoy,
+  Beer,
+  Candy,
+  Cigarette,
+  Coffee,
+  CupSoda,
+  Milk,
+  PackageCheck,
+  ShoppingBasket,
   type LucideIcon
 } from "lucide-react";
 
@@ -24,92 +24,92 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "business-licence-support",
-    title: "Business Licence Application Support",
-    shortDescription: "Guidance with understanding requirements and preparing licence application information.",
-    overview: "Practical administrative support for people preparing business licence applications, with careful organisation of information before submission.",
-    suitableFor: ["New applicants", "Small businesses", "Limited companies", "Sole traders"],
-    includes: ["Requirements checklist", "Document organisation", "Application information review", "Submission preparation guidance"],
-    customerInfo: ["Applicant details", "Business information", "Relevant documents", "Authority correspondence, where available"],
-    process: ["Discuss the application type", "Identify likely requirements", "Prepare supporting information", "Support follow-up administration"],
-    icon: FileCheck2
+    slug: "wines-beers-spirits",
+    title: "Wines, Beers & Spirits",
+    shortDescription: "Chilled beers, wines, spirits and mixers for evenings, weekends and last-minute plans.",
+    overview: "Browse a wide in-store selection of red, white, rose and sparkling wines, chilled beers, ciders, spirits and mixers, with convenient options for everyday occasions and celebrations.",
+    suitableFor: ["Weekend drinks", "Dinner plans", "Gifts", "Celebrations"],
+    includes: ["Chilled beer and cider", "Wine selection", "Spirits and mixers", "In-store recommendations"],
+    customerInfo: ["Valid ID may be required", "Availability varies by store stock", "Ask in store for current offers"],
+    process: ["Visit the store", "Browse chilled and shelf displays", "Ask for help choosing", "Pay safely in store"],
+    icon: Beer
   },
   {
-    slug: "licence-renewal-support",
-    title: "Licence Renewal Support",
-    shortDescription: "Help tracking renewal needs, organising documents, and preparing renewal information.",
-    overview: "Support for customers who need to prepare for renewal windows and keep application documents in order.",
-    suitableFor: ["Existing licence holders", "Busy business owners", "Operations teams", "Contractors"],
-    includes: ["Renewal checklist", "Deadline planning", "Document updates", "Reminder support"],
-    customerInfo: ["Current licence details", "Renewal date", "Updated business details", "Previous application records"],
-    process: ["Confirm renewal timing", "Review current information", "Prepare updated documents", "Provide administrative follow-up"],
-    icon: CalendarClock
+    slug: "soft-drinks-energy",
+    title: "Soft Drinks & Energy",
+    shortDescription: "Cold soft drinks, juices, water and energy drinks ready to grab from the fridge.",
+    overview: "Keep refreshed with chilled soft drinks, juices, bottled water, mixers and energy drinks for work, travel, lunch breaks and family top-ups.",
+    suitableFor: ["Lunch breaks", "School runs", "Travel", "Everyday refreshment"],
+    includes: ["Chilled cans and bottles", "Juices and water", "Mixers", "Multipacks"],
+    customerInfo: ["Ask about multipack availability", "New flavours arrive regularly"],
+    process: ["Pick from the fridge", "Add snacks or groceries", "Pay quickly", "Enjoy on the go"],
+    icon: CupSoda
   },
   {
-    slug: "document-preparation",
-    title: "Document Preparation Assistance",
-    shortDescription: "Organised support with gathering, checking, and preparing application documents.",
-    overview: "A structured service for customers who want their supporting information presented clearly and consistently.",
-    suitableFor: ["Applicants with multiple documents", "Start-ups", "Property businesses", "Hospitality businesses"],
-    includes: ["Document checklist", "Formatting guidance", "Completeness review", "Secure handling"],
-    customerInfo: ["Identity or business documents, where applicable", "Application forms", "Supporting evidence", "Contact details"],
-    process: ["List required documents", "Collect customer information", "Organise files", "Highlight missing items"],
-    icon: FolderCog
+    slug: "snacks-confectionery",
+    title: "Snacks & Confectionery",
+    shortDescription: "Crisps, sweets, chocolate, biscuits and sharing snacks for every craving.",
+    overview: "From quick treats to sharing bags, our snack shelves are stocked for movie nights, lunch boxes, late-night cravings and everyday convenience.",
+    suitableFor: ["Movie nights", "Lunch boxes", "Family treats", "Late-night snacks"],
+    includes: ["Crisps and savoury snacks", "Chocolate", "Sweets", "Biscuits and sharing packs"],
+    customerInfo: ["Selection changes often", "Ask in store for popular new arrivals"],
+    process: ["Browse the snack displays", "Choose individual or sharing packs", "Pair with chilled drinks", "Check out in minutes"],
+    icon: Candy
   },
   {
-    slug: "application-review",
-    title: "Application Review Support",
-    shortDescription: "A careful administrative review before an application is submitted.",
-    overview: "Support designed to reduce avoidable admin delays by checking that supplied information appears complete and consistent.",
-    suitableFor: ["Customers preparing submissions", "Businesses updating records", "Applicants responding to authority requests"],
-    includes: ["Completeness checks", "Consistency review", "Missing-information notes", "Clear next-step summary"],
-    customerInfo: ["Draft application", "Supporting documents", "Relevant correspondence", "Business contact details"],
-    process: ["Receive draft details", "Review provided materials", "Summarise findings", "Assist with corrections"],
-    icon: FileSearch
+    slug: "groceries-essentials",
+    title: "Groceries & Essentials",
+    shortDescription: "Milk, bread, eggs, cupboard staples, toiletries and household basics close to home.",
+    overview: "Avoid the supermarket trip when you only need a few things. Pick up daily groceries, household items, toiletries and simple essentials from your local store.",
+    suitableFor: ["Quick top-ups", "Busy households", "Students", "Local residents"],
+    includes: ["Milk, bread and eggs", "Cupboard basics", "Toiletries", "Household essentials"],
+    customerInfo: ["Stock varies by day", "Call ahead for urgent items"],
+    process: ["Pop in locally", "Pick up essentials", "Ask staff if you cannot find something", "Pay and go"],
+    icon: ShoppingBasket
   },
   {
-    slug: "compliance-administration",
-    title: "Compliance Administration",
-    shortDescription: "General support for keeping licence-related records organised and accessible.",
-    overview: "Administrative help for businesses that need a clearer approach to documentation, reminders, and record keeping.",
-    suitableFor: ["Small businesses", "Limited companies", "Retail businesses", "Contractors"],
-    includes: ["Record organisation", "Checklist creation", "Deadline tracking", "Correspondence support"],
-    customerInfo: ["Current records", "Relevant deadlines", "Authority letters", "Business updates"],
-    process: ["Map current records", "Identify admin gaps", "Create an action list", "Maintain follow-up reminders"],
-    icon: ClipboardCheck
+    slug: "fresh-grab-and-go",
+    title: "Fresh & Grab-and-Go",
+    shortDescription: "Easy lunch, chilled food, sandwiches and quick bites for busy days.",
+    overview: "Find simple grab-and-go food and chilled options for lunch breaks, travel, workdays and quick local shopping.",
+    suitableFor: ["Lunch breaks", "Commuters", "Busy workers", "Quick meals"],
+    includes: ["Sandwiches and chilled food", "Fruit and light bites", "Cold drinks", "Quick snacks"],
+    customerInfo: ["Fresh availability can vary", "Visit earlier for the best choice"],
+    process: ["Choose food and drink", "Add any essentials", "Pay quickly", "Get on with your day"],
+    icon: Coffee
   },
   {
-    slug: "business-registration",
-    title: "Business Registration Assistance",
-    shortDescription: "Administrative guidance for business registration information and supporting records.",
-    overview: "Practical support with organising business registration details and preparing information for administrative processes.",
-    suitableFor: ["New businesses", "Sole traders", "Start-ups", "Directors organising records"],
-    includes: ["Business detail checklist", "Record preparation", "Document organisation", "General administration"],
-    customerInfo: ["Business name", "Company number if available", "Address details", "Contact information"],
-    process: ["Clarify registration needs", "Collect business details", "Organise documents", "Provide next-step guidance"],
-    icon: Landmark
+    slug: "tobacco-vape",
+    title: "Tobacco & Vape",
+    shortDescription: "Age-restricted tobacco, vape and related accessories available in store.",
+    overview: "Selected tobacco, vape products and accessories are available in store for customers aged 18 or over, subject to stock and age verification.",
+    suitableFor: ["Adult customers", "Regular essentials", "In-store purchases"],
+    includes: ["Tobacco products", "Vape items", "Papers and accessories", "Age checks"],
+    customerInfo: ["Valid ID may be required", "18+ only", "Products are available in store only"],
+    process: ["Ask at the counter", "Show ID if requested", "Confirm product availability", "Purchase in store"],
+    icon: Cigarette
   },
   {
-    slug: "renewal-reminders",
-    title: "Deadline and Renewal Reminders",
-    shortDescription: "Calendar-based support to help customers prepare before important renewal dates.",
-    overview: "Reminder support for customers who want to stay ahead of licence, document, or application deadlines.",
-    suitableFor: ["Busy owners", "Operations teams", "Contractors", "Property businesses"],
-    includes: ["Deadline capture", "Reminder scheduling", "Preparation checklists", "Follow-up prompts"],
-    customerInfo: ["Renewal dates", "Contact preference", "Licence reference if available", "Relevant authority details"],
-    process: ["Record deadlines", "Agree reminder timing", "Send preparation prompts", "Support next steps"],
-    icon: CalendarClock
+    slug: "dairy-chilled",
+    title: "Dairy & Chilled",
+    shortDescription: "Cold everyday essentials including milk, chilled drinks and fridge staples.",
+    overview: "Keep the fridge topped up with milk, chilled drinks and selected everyday dairy and chilled items from a convenient local shop.",
+    suitableFor: ["Morning top-ups", "Family essentials", "Quick local shops"],
+    includes: ["Milk", "Chilled drinks", "Selected dairy", "Fridge staples"],
+    customerInfo: ["Call ahead for specific essentials", "Fresh stock varies"],
+    process: ["Visit the chilled section", "Pick up what you need", "Add groceries or snacks", "Check out quickly"],
+    icon: Milk
   },
   {
-    slug: "general-business-support",
-    title: "General Business Support",
-    shortDescription: "Flexible administrative help for business documents, enquiries, and application planning.",
-    overview: "General support for customers who need clear, organised help with business administration tasks.",
-    suitableFor: ["Individuals", "Sole traders", "Small businesses", "Limited companies"],
-    includes: ["Admin guidance", "Document lists", "Enquiry preparation", "Communication support"],
-    customerInfo: ["Support request details", "Business information", "Relevant documents", "Preferred contact method"],
-    process: ["Understand the request", "Confirm available support", "Prepare an action plan", "Provide practical assistance"],
-    icon: LifeBuoy
+    slug: "local-services",
+    title: "Local Convenience Services",
+    shortDescription: "Helpful in-store support for quick everyday errands and local customer needs.",
+    overview: "We aim to make daily errands easier with a friendly counter, quick shopping, useful essentials and helpful local service.",
+    suitableFor: ["Local residents", "Passing customers", "Quick errands", "Everyday needs"],
+    includes: ["Friendly customer help", "Quick counter service", "Local essentials", "Enquiry support"],
+    customerInfo: ["Call or visit for current services", "Availability can vary"],
+    process: ["Tell us what you need", "We check availability", "Pick up in store", "Ask about new stock"],
+    icon: PackageCheck
   }
 ];
 
@@ -118,21 +118,21 @@ export function getService(slug: string) {
 }
 
 export const supportAudiences = [
-  "Sole Traders",
-  "Start-Ups",
-  "Small Businesses",
-  "Limited Companies",
-  "Contractors",
-  "Property Businesses",
-  "Retail Businesses",
-  "Hospitality Businesses"
+  "Local Residents",
+  "Commuters",
+  "Students",
+  "Families",
+  "Late-Night Shoppers",
+  "Weekend Hosts",
+  "Workers on Break",
+  "Visitors Nearby"
 ];
 
 export const choiceFeatures = [
-  "Clear Communication",
-  "Organised Process",
-  "UK-Based Support",
-  "Confidential Handling",
-  "Practical Guidance",
-  "Responsive Assistance"
+  "Open Late",
+  "Chilled Drinks",
+  "Everyday Essentials",
+  "Friendly Service",
+  "Quick Local Shop",
+  "Fresh New Stock"
 ];
