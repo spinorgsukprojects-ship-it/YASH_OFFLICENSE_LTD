@@ -22,8 +22,7 @@ export const company = {
     ["Monday - Thursday", "8:00 am - 11:00 pm"],
     ["Friday - Saturday", "8:00 am - 12:00 am"],
     ["Sunday", "9:00 am - 10:30 pm"]
-  ],
-  directionsUrl: "https://www.google.com/maps/search/?api=1&query=100%20Charter%20House%20Ebony%20Close%20Colchester%20CO2%209LX"
+  ]
 };
 
 export const storeIntro =

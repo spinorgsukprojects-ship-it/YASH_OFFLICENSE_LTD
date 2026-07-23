@@ -11,7 +11,7 @@ const services = [
   "Snacks and confectionery",
   "Groceries and essentials",
   "Tobacco or vape products",
-  "Opening hours or directions",
+  "Opening hours",
   "General enquiry"
 ];
 

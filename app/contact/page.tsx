@@ -6,20 +6,20 @@ import { company } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Yash Off Licence for opening hours, directions and product availability.",
+  description: "Contact Yash Off Licence for opening hours and product availability.",
   alternates: { canonical: "/contact" }
 };
 
 export default function ContactPage() {
   return (
     <>
-      <section className="section bg-cream"><div className="container"><SectionHeading title="Visit or Contact Yash Off Licence" text="Call, email, get directions or send a quick enquiry about stock and opening hours." /></div></section>
+      <section className="section bg-cream"><div className="container"><SectionHeading title="Visit or Contact Yash Off Licence" text="Call, email, or send a quick enquiry about stock and opening hours." /></div></section>
       <section className="section">
         <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="space-y-4">
             <ContactInfo icon={<Phone />} label="Phone" value={company.phone} href={company.telHref} />
             <ContactInfo icon={<Mail />} label="Email" value={company.email} href={company.mailHref} />
-            <ContactInfo icon={<MapPin />} label="Address" value={company.fullAddress} href={company.directionsUrl} />
+            <ContactInfo icon={<MapPin />} label="Address" value={company.fullAddress} />
             <div className="card p-5">
               <p className="font-heading text-xl font-black">Opening Hours</p>
               <div className="mt-4 space-y-3">

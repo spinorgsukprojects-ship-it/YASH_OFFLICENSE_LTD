@@ -3,6 +3,8 @@ import { posts } from "@/data/blog";
 import { siteUrl } from "@/data/company";
 import { services } from "@/data/services";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/about", "/services", "/how-it-works", "/faq", "/blog", "/contact", "/company-information", "/privacy-policy", "/terms-and-conditions", "/cookie-policy", "/disclaimer"];
   return [

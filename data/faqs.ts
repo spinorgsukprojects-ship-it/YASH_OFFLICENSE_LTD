@@ -37,6 +37,6 @@ export const faqs: FAQ[] = [
   {
     question: "How can I contact the store?",
     answer:
-      "You can call, email, get directions from the contact page, or send a quick enquiry through the website."
+      "You can call, email, or send a quick enquiry through the website."
   }
 ];
