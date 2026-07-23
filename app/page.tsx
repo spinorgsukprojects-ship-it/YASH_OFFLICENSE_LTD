@@ -3,20 +3,12 @@ import Link from "next/link";
 import { ArrowRight, BadgePercent, Beer, Clock, Phone, ShoppingBasket, Sparkles, type LucideIcon } from "lucide-react";
 import { MotionDiv } from "@/components/Motion";
 import { company, legalDisclaimer } from "@/data/company";
-import { services } from "@/data/services";
 
 const quickLinks = [
   "Chilled",
   "Wines",
   "Essentials",
   "Treats"
-];
-
-const gallery = [
-  { src: "/images/chilled-drinks-gallery.png", title: "Chilled Drinks", text: "Cold beers, wines, mixers and soft drinks.", href: "/services/wines-beers-spirits" },
-  { src: "/images/confectionery-gallery.png", title: "Sweets & Treats", text: "Colourful snacks, chocolate and confectionery.", href: "/services/snacks-confectionery" },
-  { src: "/images/groceries-snacks.png", title: "Daily Essentials", text: "Groceries, chilled food and household basics.", href: "/services/groceries-essentials" },
-  { src: "/images/drinks-selection.png", title: "Wine Selection", text: "Bottles for dinners, gifts and weekends.", href: "/services/wines-beers-spirits" }
 ];
 
 const moments: { title: string; text: string; icon: LucideIcon }[] = [
@@ -67,12 +59,18 @@ export default function Home() {
             <h2 className="mt-5 font-heading text-3xl font-black sm:text-4xl md:text-6xl">A Better Looking Local Shop</h2>
             <p className="mt-5 text-lg leading-8 text-slateText">Less searching, more finding. Clean shelves, chilled fridges and everyday favourites ready when you need them.</p>
           </div>
-          <div className="mt-12 grid gap-4 md:grid-cols-4 md:grid-rows-[260px_260px]">
-            <PhotoTile className="md:col-span-2 md:row-span-2" src="/images/off-licence-hero.png" title="Fresh, Bright, Easy" href="/services" />
-            <PhotoTile src="/images/chilled-drinks-gallery.png" title="Chilled Drinks" href="/services/soft-drinks-energy" />
-            <PhotoTile src="/images/confectionery-gallery.png" title="Treats" href="/services/snacks-confectionery" />
-            <PhotoTile src="/images/drinks-selection.png" title="Wine & Spirits" href="/services/wines-beers-spirits" />
-            <PhotoTile src="/images/groceries-snacks.png" title="Essentials" href="/services/groceries-essentials" />
+          <div className="mt-10 grid gap-3 sm:mt-12 md:grid-cols-4 md:grid-rows-[260px_260px] md:gap-4">
+            <PhotoTile
+              className="min-h-[320px] md:col-span-2 md:row-span-2"
+              src="/images/off-licence-hero.png"
+              title="Fresh, Bright, Easy"
+              text="A cleaner, more inviting local shop for drinks, snacks and daily essentials."
+              href="/services"
+            />
+            <PhotoTile src="/images/chilled-drinks-gallery.png" title="Chilled Drinks" text="Cold cans, bottles, mixers and soft drinks." href="/services/soft-drinks-energy" />
+            <PhotoTile src="/images/confectionery-gallery.png" title="Treats" text="Colourful sweets, crisps, chocolate and sharing snacks." href="/services/snacks-confectionery" />
+            <PhotoTile src="/images/drinks-selection.png" title="Wine & Spirits" text="Bottles for dinners, weekends and gifting." href="/services/wines-beers-spirits" />
+            <PhotoTile src="/images/groceries-snacks.png" title="Essentials" text="Milk, bread, groceries and household top-ups." href="/services/groceries-essentials" />
           </div>
         </div>
       </section>
@@ -91,14 +89,6 @@ export default function Home() {
                 <p className="mt-2 text-sm leading-6 text-emerald-50/75">{text}</p>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section bg-mist">
-        <div className="container">
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {gallery.map((item) => <GalleryCard key={item.title} {...item} />)}
           </div>
         </div>
       </section>
@@ -129,23 +119,14 @@ export default function Home() {
   );
 }
 
-function PhotoTile({ src, title, href, className = "" }: { src: string; title: string; href: string; className?: string }) {
+function PhotoTile({ src, title, text, href, className = "" }: { src: string; title: string; text: string; href: string; className?: string }) {
   return (
-    <Link href={href} className={`group relative min-h-[240px] overflow-hidden rounded-md bg-emerald-950 shadow-soft ${className}`}>
+    <Link href={href} className={`group relative flex min-h-[230px] overflow-hidden rounded-md bg-emerald-950 shadow-soft ${className}`}>
       <Image src={src} alt={title} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 768px) 50vw, 100vw" />
-      <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/78 via-emerald-950/10 to-transparent" />
-      <span className="absolute bottom-5 left-5 font-heading text-2xl font-black text-white">{title}</span>
-    </Link>
-  );
-}
-
-function GalleryCard({ src, title, text, href }: { src: string; title: string; text: string; href: string }) {
-  return (
-    <Link href={href} className="group overflow-hidden rounded-md bg-white shadow-soft">
-      <Image src={src} alt={title} width={900} height={700} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
-      <div className="p-5">
-        <h3 className="font-heading text-xl font-black">{title}</h3>
-        <p className="mt-2 text-sm leading-6 text-slateText">{text}</p>
+      <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/88 via-emerald-950/22 to-transparent" />
+      <div className="relative mt-auto p-5 text-white sm:p-6">
+        <span className="font-heading text-2xl font-black leading-tight">{title}</span>
+        <p className="mt-2 max-w-sm text-sm font-bold leading-6 text-white/82">{text}</p>
       </div>
     </Link>
   );
